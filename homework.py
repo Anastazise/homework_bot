@@ -64,8 +64,7 @@ def get_api_answer(timestamp):
     except requests.exceptions.RequestException as request_error:
         raise logger.error(request_error)
     if response.status_code != HTTPStatus.OK:
-        logger.error(
-            'Ошибка. Эндпоинт {ENDPOINT} недоступен. '
+        logger.error('Ошибка. Эндпоинт {ENDPOINT} недоступен.'
             'Код ответа API: {0}'.format(response.status_code)
         )
         raise SystemError()
