@@ -35,7 +35,8 @@ logger = logging.getLogger(__name__)
 
 def check_tokens():
     """Проверка доступности необходимых токенов."""
-    token = all()
+    token = all([PRACTICUM_TOKEN, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
+    ])
     return token
 
 
