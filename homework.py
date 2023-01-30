@@ -35,11 +35,7 @@ logger = logging.getLogger(__name__)
 
 def check_tokens():
     """Проверка доступности необходимых токенов."""
-    token = all([
-        PRACTICUM_TOKEN is not None,
-        TELEGRAM_TOKEN is not None,
-        TELEGRAM_CHAT_ID is not None
-    ])
+    token = all()
     return token
 
 
@@ -76,7 +72,7 @@ def get_api_answer(timestamp):
 
 def check_response(response):
     """Проверка ответа от ЯндексПрактикума."""
-    if type(response) == dict:
+    if isinstance(response, dict):
         homework = response.get('homeworks')
         if homework is None:
             logging.error('не содержит homeworks')
